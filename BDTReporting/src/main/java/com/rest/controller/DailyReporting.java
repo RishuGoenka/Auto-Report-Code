@@ -21,7 +21,7 @@ public class DailyReporting {
 	static Logger log = Logger.getLogger(DailyReporting.class.getName());
 	static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		try {
 			ConsolidatedReport.consolidatedFinalReportForAllProuct();
 			List<FinalReport> report = new ArrayList<>();
