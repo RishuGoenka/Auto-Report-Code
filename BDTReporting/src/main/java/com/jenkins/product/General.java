@@ -19,7 +19,7 @@ public class General {
 	static final String BUILD_ABORTED = "BUILD_ABORTED";
 	static final String BUILDSTATUS_FAILURE = "FAILURE";
 	static final String CI = "CI";
-	static final String NO_VALUE = "No Info Available";
+	static final String NO_VALUE = "-";
 
 	static final String BUILD = "_Build";
 	static final String BDTD = "_BDTD";
