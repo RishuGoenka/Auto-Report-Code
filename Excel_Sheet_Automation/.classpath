@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/poi-bin-3.16-20170419/poi-3.16/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/poi-bin-3.16-20170419/poi-3.16/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/poi-bin-3.16-20170419/poi-3.16/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/poi-bin-3.16-20170419/poi-3.16/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/poi-bin-3.16-20170419/poi-3.16/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/dom4j.jar/dom4j.jar"/>
+	<classpathentry kind="lib" path="D:/Jar Set/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rishu.goenka/Downloads/mail.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
