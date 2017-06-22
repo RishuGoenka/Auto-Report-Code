@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="build-jar" name="Create Runnable Jar for Project BDTReporting">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+	<!--ANT 1.8 is required                                        -->
+	<!--define folder properties-->
+
+  <tstamp>
+    <format property="build-info.current-date" pattern="dd-MMMM-yyyy" locale="en,GB"/>
+    <format property="build-info.current-time" pattern="hh:mm aa" locale="en,GB"/>
+  </tstamp>
+
+<property name="project-name" value="BDT-DetailedReport"/>
+<property name="builder" value="Avinash Behera"/>
+
+
+<!-- Setting classpath for compilation -->
+	<path id="jar-project-classpath">
+		<fileset dir="lib" includes="*.jar" />
+	</path>
+<!-- Setting classpath for compilation | adding lib dir for entry in MANIFEST.MF -->
+	<pathconvert property="project-classpath" pathsep=" ">
+		<path refid="jar-project-classpath" />
+		<mapper>
+			<chainedmapper>
+				<flattenmapper />
+				<globmapper from="*.jar" to="lib/*.jar" />
+			</chainedmapper>
+		</mapper>
+	</pathconvert>
+
+	<target name="clean">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<delete dir="build" />
+		<mkdir dir="build/lib" />
+		<mkdir dir="build/Files" />
+	</target>
+
+<!-- Copying all the non java file into jar temp dir -->
+	<target name="copy-non-java-files">
+		<copy todir="bin" includeemptydirs="false">
+			<fileset dir="src/main/java" excludes="**/*.java" />
+			<fileset dir="src/main/resources" excludes="**/*.java" />
+		</copy>
+	</target>
+
+<!-- Copying all the dependent lib into jar temp dir -->
+	<target name="copy-lib-files">
+		<copy todir="bin/lib" includeemptydirs="false">
+			<fileset dir="lib" excludes="**/*.java" />
+		</copy>
+	</target>
+
+<!-- Compilation of jar -->
+	<target name="compile-jar-classes" depends="clean,copy-non-java-files,copy-lib-files">
+		<javac srcdir="src/main/java" destdir="bin" classpathref="jar-project-classpath" includeantruntime="true" />
+	</target>
+	
+<!-- Creating Jar file -->
+	<target name="jar">
+		<jar basedir="bin" destfile="build/${project-name}.jar">
+			<manifest>
+				<attribute name="Built-By" value="${builder}" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+				<attribute name="Main-Class" value="com.rest.controller.Reporting"/>
+				<attribute name="Class-Path" value="${project-classpath}" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="package">
+		<copy todir="build/lib">
+			<fileset dir="lib" excludes="**/*java" />
+		</copy>
+		<copy todir="build/Files">
+			<fileset dir="Files" excludes="**/*java" />
+		</copy>
+	</target>
+
+	<target name="build-jar">
+		<record name="build.log" action="start" />
+		<echo>****************** Build Start *****************</echo>
+			<antcall target="compile-jar-classes" />
+			<antcall target="jar" />
+			<antcall target="package" />
+		<echo>****************** Build End *******************</echo>
+		
+		<echo file="build/README.nfo" append="true">
+README
+
+Built-By: ${builder}
+Built-On: ${build-info.current-date}
+Built-At: ${build-info.current-time}
+Main-Class: com.rest.controller.Reporting
+Class-Path: ${project-classpath}
+
+copy ${project-name}.jar | lib | Files to the destination                                 
+Run the jar with command : java -jar ${project-name}.jar name1@email.com,name1@email.com no_of_days
+		</echo>
+		
+		<record name="build.log" action="stop" />
+	</target>
+	
+	<target name="clean-jar">
+		<antcall target="clean" />
+	</target>
+	
+</project>

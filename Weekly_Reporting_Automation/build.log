@@ -1,0 +1,25 @@
+     [echo] ****************** Build Start *****************
+
+clean:
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\WeeklyBDTReporting\bin
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\WeeklyBDTReporting\build\lib
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\WeeklyBDTReporting\build\Files
+
+copy-non-java-files:
+     [copy] Copying 2 files to D:\workspace\BitBucket_develop\WeeklyBDTReporting\bin
+
+copy-lib-files:
+     [copy] Copying 37 files to D:\workspace\BitBucket_develop\WeeklyBDTReporting\bin\lib
+
+compile-jar-classes:
+    [javac] Compiling 15 source files to D:\workspace\BitBucket_develop\WeeklyBDTReporting\bin
+    [javac] Note: D:\workspace\BitBucket_develop\WeeklyBDTReporting\src\main\java\com\jenkins\database\HibernateWrappers.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+jar:
+      [jar] Building jar: D:\workspace\BitBucket_develop\WeeklyBDTReporting\build\BDT-DetailedReport.jar
+
+package:
+     [copy] Copying 37 files to D:\workspace\BitBucket_develop\WeeklyBDTReporting\build\lib
+     [copy] Copying 2 files to D:\workspace\BitBucket_develop\WeeklyBDTReporting\build\Files
+     [echo] ****************** Build End *******************
