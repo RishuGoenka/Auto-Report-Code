@@ -1,0 +1,34 @@
+     [echo] ****************** Build Start *****************
+
+clean:
+   [delete] Deleting directory D:\workspace\BitBucket_develop\DailyBDTReporting\bin
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\DailyBDTReporting\bin
+   [delete] Deleting directory D:\workspace\BitBucket_develop\DailyBDTReporting\build
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\DailyBDTReporting\build\lib
+    [mkdir] Created dir: D:\workspace\BitBucket_develop\DailyBDTReporting\build\Files
+
+copy-non-java-files:
+     [copy] Copying 2 files to D:\workspace\BitBucket_develop\DailyBDTReporting\bin
+
+copy-lib-files:
+     [copy] Copying 37 files to D:\workspace\BitBucket_develop\DailyBDTReporting\bin\lib
+
+compile-jar-classes:
+    [javac] Compiling 17 source files to D:\workspace\BitBucket_develop\DailyBDTReporting\bin
+    [javac] D:\workspace\BitBucket_develop\DailyBDTReporting\src\main\java\com\jenkins\reporter\JenkinsReport.java:42: warning: BASE64Encoder is internal proprietary API and may be removed in a future release
+    [javac] 				String encoded = new sun.misc.BASE64Encoder().encode(loginPassword.getBytes());
+    [javac] 				                             ^
+    [javac] D:\workspace\BitBucket_develop\DailyBDTReporting\src\main\java\com\jenkins\reporter\JenkinsReport.java:61: warning: BASE64Encoder is internal proprietary API and may be removed in a future release
+    [javac] 				String encoded = new sun.misc.BASE64Encoder().encode(loginPassword.getBytes());
+    [javac] 				                             ^
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+    [javac] 2 warnings
+
+jar:
+      [jar] Building jar: D:\workspace\BitBucket_develop\DailyBDTReporting\build\BDT-DailyReport.jar
+
+package:
+     [copy] Copying 37 files to D:\workspace\BitBucket_develop\DailyBDTReporting\build\lib
+     [copy] Copying 2 files to D:\workspace\BitBucket_develop\DailyBDTReporting\build\Files
+     [echo] ****************** Build End *******************
